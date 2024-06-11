@@ -1,223 +1,41 @@
 
-## ![Wand 🪄](https://github.com/El-Machine/Wand/raw/main/App/Assets.xcassets/AppIcon.appiconset/magic-wand-transformed-20.png) API for Any (thing) |
-**📦 An ideal API acts as the [black box](https://wikipedia.org/wiki/Blackbox)**  
-**⚡️ It’s possible to incapsulate whole data receiving and memory managment duty to one symbol**  
-**?**   
+## API for Any (thing) |
 
-[Medium.com](https://medium.com/@al.kozin/universal-api-7ddc67bb0aa5)
-[Habr.com](https://habr.com/ru/post/674010/)
-  
->In Unix-like computer operating systems, a [pipeline](https://wikipedia.org/wiki/Pipeline_(Unix)) is a mechanism for inter-process communication using message passing. A pipeline is a set of processes chained together by their standard streams, so that the output text of each process (stdout) is passed directly as input (stdin) to the next one. The second process is started as the first process is still executing, and they are executed concurrently.
-
-### 💬 bash
+### Usage
 ```bash
-command1 | command2 | command3
 
-ls -l | grep key | less
-```
+#Ask Data
+"https://api.github.com/gists" | { (data: Data) in
 
-### 🕊️ swift
-```bash
-#Create handler  
-{ (bar: Bar) in
+}
+
+#Wait for Notification
+UIApplication.didBecomeActiveNotification | { (n: Notification) in
 
 }
 
 ```
+### Idea
+  Imagine that you have a black box that can give you any object 💡  
+  You don't know what is already in box or what will happens inside ⚙️   
+  Simply ask for objects that you need
 
-```bash
-#Black box
-prefix func | (handler: @escaping (Bar)->() )
+### Сoncept
 
-#Call API
-| { (bar: Bar) in
+Wand started from idea about receiving anything in most efficient and fast way 🪄  
+Just add on¯e sign to completion handler and retreive the result 📦  
 
-}
+You ideas, comments, contribution are welcome |
 
-```
+Tasks
 
-```bash
-#Retreive data (profit)
-handler(bar)
+- [x] Notification
+- [x] Data
+- [x] URL
+- [x] JsonObject
+- [ ] REST
 
-``` 
+- [x] Data
 
-### ⚙️ usage
-
-```bash
-
-#Request current Location
-|{ (location: CLLocation) in 
-
-}
-
-#Request .authorizedAlways permissions once
-CLAuthorizationStatus.authorizedAlways | .one { status in
-            
-}
-
-#Update Pedometer Data
-|{ (data: CMPedometerData) in 
-
-}
-
-#Scan for Bluetooth Peripheral
-|{ (peripheral: CBPeripheral) in 
-
-}
-
-#Wait for a Notification
-UIWindow.keyboardWillShowNotification | { (n: Notification) in
-            
-}
-
-#Enumerate Contacts
-CNContact.predicateForContacts(matchingName: "John") | .every { (contact: CNContact) in
-                        
-}
-
-#Scan a tag
-|.every { (tag: NFCNDEFTag) in
-
-}
-
-#Perform Face Observation
-URL(string: "http://example.com/image.jpg") | { (faces: [VNFaceObservation]) in
-
-}
-
-#Perform Pose Observation
-data | .while { (bodies: [VNHumanBodyPoseObservation]) in
-    bodies < 2
-}
-
-#Detect shake
-|{ (motion: UIEvent.EventSubtype) in
-    if motion == .motionShake {
-                
-    }
-}
-
-```
-
-```bash
-#Customization
-let wand = |{ (hands: [VNHumanHandPoseObservation]) in
-
-}
-
-let request: VNDetectHumanHandPoseRequest = wand.obtain()
-request.maximumHandCount = 4
-
-let preview: AVCaptureVideoPreviewLayer = wand.obtain()
-view.layer.addSublayer(preview!)
-```
-
-### 💡 Idea
-  Imagine that you have the black box that can give you an ```Any``` object.   
-  You don't know what's already in the box or what will happen inside   
-      
-  Ask for object that you need |
-
-### 🪄 Сoncept
-
-Wand started from the idea about receiving anything in most efficient way. 
-  
-Add one sign to completion handler and retreive the result 📦   
-ex [Pipe](https://medium.com/@al.kozin/universal-api-7ddc67bb0aa5)   
-ex [API](https://github.com/El-Machine/iOS-API-Wrapper)   
-
-[Feel free to contribute. You are welcome 🔬](https://github.com/El-Machine/Wand/graphs/contributors)
-
-### 📚 Books
-
-- 🖼️  Design Patterns: Elements of Reusable Object-Oriented Software (1994)   
-      GOF: Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides
-
-- 🧼  Clean Code: A Handbook of Agile Software Craftsmanship (2008)   
-      Robert C. Martin  
-
-- 🎼  Introduction to TRIZ. Basic Concepts and Approaches (2015)   
-      G.S. Altshuller  
-
-- 🏛️  Clean Architecture: A Craftsman's Guide to Software Structure and Design (2017)   
-      Robert C. Martin  
-
-- 😜  The Inmates Are Running the Asylum:   
-      Why High Tech Products Drive Us Crazy and How to Restore the Sanity (2019)   
-      Alan Cooper (Author)  
-
-- ⊶  Origin (2017)   
-      Dan Brown
-
-## [🤝 Inspirtation](https://github.com/El-Machine/Wand/blob/main/INSPIRATION.TXT)
-
-- 💿  CD Production   
-      Sony Digital Audio Disk Corporation   
-      ソニー・グループ株式会社   
-      https://sony.com
-
-- 🪟  Windows Production   
-      Stan Barnes, William and Lynne Jolitz   
-      https://support.microsoft.com/windows
-
-- 📱  iPod   
-      Tony Fadell   
-      [ˈaɪˌpɔd]   
-      https://wikipedia.org/wiki/Tony_Fadell
-
-- 🍏  Apple   
-      Steven Paul Jobs   
-      A prominent part of macOS's original brand identity was   
-      the use of Roman numeral X, pronounced "ten"   
-      https://wikipedia.org/wiki/Steve_Jobs
-
-- ⚙️  BSD   
-      Berkeley, 1974   
-      https://wikipedia.org/wiki/BSD
-
-- 🔔  The concept of pipelines was championed by Douglas McIlroy at Unix's   
-      Bell Labs   
-      https://wikipedia.org/wiki/Pipeline_(Unix)
-
-- |   Wand icon   
-      Freepik - Flaticon   
-      https://flaticon.com/free-icons/wand
-
-- 🤖  Upscaled by AI   
-      Augmented Intelligence   
-      https://www.google.com?q=ai+upscale+image
-    
-- ⚡️  Macromedia® Flash   
-      600 Townsend Street, San Francisco, CA 94103 1997   
-      Now vector-based interactive web animations, buttons, and graphics   
-      can be used on every Web page   
-      https://wikipedia.org/wiki/Macromedia
-
-- 🐢  Logo   
-      Bolt, Beranek and Newman 1967   
-      Logo is a wonderful   
-      https://wikipedia.org/wiki/Macromedia
-
-- 🐬  Flipper   
-      Anna Prosvetova, Pavel Zhovner   
-      Flipper Zero is a portable multi-tool for pentesters and hardware geeks   
-      in a toy-like body. It loves to explore the digital world around:   
-      radio protocols, access control systems, hardware, and more.   
-      The main idea behind the Flipper Zero is to combine all the research   
-      https://flipperzero.one
-
-## Tasks
-
-- [x] Contacts
-- [x] CoreLocation
-- [x] CoreMotion
-- [x] NSNotification
-- [ ] CoreNFC
-- [ ] Vision
-- [ ] Rest
-- [ ] MultipeerConnectivity
-
-[Alex Kozin](mailto:al@el-machine.com)   
-[El Machine 🤖](https://el-machine.com)  
-since 2008
+[Alex Kozin](mailto:al@el-machine.com)  
+[El Machine 🤖](https://el-machine.com) 2024

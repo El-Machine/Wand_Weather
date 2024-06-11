@@ -8,7 +8,7 @@
 /// you may not use this file except in compliance with the License.
 /// You may obtain a copy of the License at
 ///
-/// 1) .LICENSE
+/// 1) LICENSE file
 /// 2) https://apache.org/licenses/LICENSE-2.0
 ///
 /// Unless required by applicable law or agreed to in writing, software
@@ -23,7 +23,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "Wand",
+    name: "Wand_Weather",
     defaultLocalization: "ru",
 
     platforms: [
@@ -34,20 +34,33 @@ let package = Package(
     ],
 
     products: [
-        .library(name: "Wand", targets: ["Wand"])
+        .library(name: "Wand_Weather", targets: ["Wand_Weather"])
     ],
 
     dependencies: [
-        .package(url: "https://github.com/el-machine/Any.git", from: "1.0.1")
+        .package(url: "https://github.com/el-machine/Any.git", from: "1.0.1"),
+//        .package(url: "https://github.com/el-machine/Wand.git", from: "1.3.5"),
+
+//        .package(url: "https://github.com/el-machine/Wand_CoreLocation.git", from: "1.0.1"),
+//        .package(url: "https://github.com/el-machine/Wand_URL.git", from: "1.0.2"),
     ],
 
     targets: [
-        .target(name: "Wand"),
+
+        .target(name: "Wand_Weather", dependencies:
+                    [
+//                        "Wand_CoreLocation",
+//"Wand_URL",
+//.product(name: "Wand_URL", package: "Wand_URL"),
+//.product(name: "Wand", package: "Wand_URL"),
+                    ]
+               ),
         .testTarget(name: "wandTests", dependencies:
                         [
-                            "Wand",
-                            .product(name: "Any_", package: "Any")
+                            .product(name: "Any_", package: "Any"),
+                            "Wand_Weather",
                         ]
                    )
+
     ]
 )

@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CFBundleShortVersionString</key>
+	<string>1.1.1</string>
+	<key>CFBundleVersion</key>
+	<string>234</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>ru</string>
 	<key>CFBundleExecutable</key>
@@ -14,12 +18,10 @@
 	<string>$(PRODUCT_NAME)</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
-	<key>CFBundleShortVersionString</key>
-	<string>1.1.1</string>
-	<key>CFBundleVersion</key>
-	<string>726</string>
-	<key>LSApplicationCategoryType</key>
-	<string>public.app-category.developer-tools</string>
+	<key>WKApplication</key>
+	<true/>
+	<key>WKCompanionAppBundleIdentifier</key>
+	<string>el-machine.Play</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
@@ -34,9 +36,18 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>WKApplication</key>
-	<true/>
-	<key>WKCompanionAppBundleIdentifier</key>
-	<string>el-machine.Play</string>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>testing 🧑‍💻</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>testing 🧑‍💻</string>
+    <key>NSLocationTemporaryUsageDescriptionDictionary</key>
+    <dict>
+        <key>Purpose1</key>
+        <string>testing 🧑‍💻</string>
+    </dict>
+    <key>NSLocationUsageDescription</key>
+    <string>testing 🧑‍💻</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>testing 🧑‍💻</string>
 </dict>
 </plist>
