@@ -6,7 +6,7 @@
 /// you may not use this file except in compliance with the License.
 /// You may obtain a copy of the License at
 ///
-/// 1) .LICENSE
+/// 1) LICENSE file
 /// 2) https://apache.org/licenses/LICENSE-2.0
 ///
 /// Unless required by applicable law or agreed to in writing, software
@@ -18,40 +18,38 @@
 /// Created by Alex Kozin
 /// 2020 El Machine
 
-import SwiftUI
-
-import CoreLocation
-import Wand_CoreLocation
-import Wand_Weather
 import WandURL
-import Wand
 
-@available(iOS 14, macOS 12, tvOS 14, watchOS 7, *)
-@main
-struct PlayApp: App {
 
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
+extension OpenWeatherMap {
+
+    public
+    struct API {
+
+        public
+        typealias Model = OpenWeatherMapAPI_Model
+
     }
 
 }
 
-@available(iOS 14, macOS 12, tvOS 14, watchOS 7, *)
-struct ContentView: View {
-    var body: some View {
+public
+protocol OpenWeatherMapAPI_Model: Rest.Model {
 
-        VStack {
-            Image(systemName: "wand.and.stars")
-            Text("Hello, world!")
-        }
-        .padding()
-
-    }
 }
 
-@available(iOS 14, macOS 12, tvOS 14, watchOS 7, *)
-#Preview {
-    ContentView()
+public
+extension OpenWeatherMapAPI_Model {
+
+    static
+    var base: String? {
+        "https://api.openweathermap.org/data/2.5/"
+    }
+
+    static
+    var headers: [String : String]? {
+        ["Accept": "application/json",
+         "Content-Type": "application/json"]
+    }
+
 }

@@ -7,22 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		610118AB2C16DFDA0081811C /* WeatherKit_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610118A42C16DFDA0081811C /* WeatherKit_Tests.swift */; };
-		610118AC2C16DFDA0081811C /* WeatherKit_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610118A42C16DFDA0081811C /* WeatherKit_Tests.swift */; };
-		610118AD2C16DFDA0081811C /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610118A62C16DFDA0081811C /* Unit.swift */; };
-		610118AE2C16DFDA0081811C /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610118A62C16DFDA0081811C /* Unit.swift */; };
-		610118AF2C16DFDA0081811C /* XCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610118A72C16DFDA0081811C /* XCTestCase.swift */; };
-		610118B02C16DFDA0081811C /* XCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610118A72C16DFDA0081811C /* XCTestCase.swift */; };
-		610118B12C16DFDA0081811C /* Package.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 610118A92C16DFDA0081811C /* Package.xctestplan */; };
-		610118B22C16DFDA0081811C /* Package.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 610118A92C16DFDA0081811C /* Package.xctestplan */; };
 		613966272BE0F532004C18A3 /* Play.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6162624528BC8E2A00D63EA5 /* Play.swift */; };
 		613966662BE0FB0D004C18A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6162624728BC8E2B00D63EA5 /* Assets.xcassets */; };
 		615159132BF76A8C001646EA /* Wand_Weather in Frameworks */ = {isa = PBXBuildFile; productRef = 61F648C62BEA122900C2625C /* Wand_Weather */; };
 		6162625428BC8E2B00D63EA5 /* Play.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6162624528BC8E2A00D63EA5 /* Play.swift */; };
 		6162625828BC8E2B00D63EA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6162624728BC8E2B00D63EA5 /* Assets.xcassets */; };
+		617C7D192C1856C200FFEA14 /* WeatherKit_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617C7D122C1856C200FFEA14 /* WeatherKit_Tests.swift */; };
+		617C7D1A2C1856C200FFEA14 /* WeatherKit_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617C7D122C1856C200FFEA14 /* WeatherKit_Tests.swift */; };
+		617C7D1B2C1856C200FFEA14 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617C7D142C1856C200FFEA14 /* Unit.swift */; };
+		617C7D1C2C1856C200FFEA14 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617C7D142C1856C200FFEA14 /* Unit.swift */; };
+		617C7D1D2C1856C200FFEA14 /* XCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617C7D152C1856C200FFEA14 /* XCTestCase.swift */; };
+		617C7D1E2C1856C200FFEA14 /* XCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617C7D152C1856C200FFEA14 /* XCTestCase.swift */; };
+		617C7D1F2C1856C200FFEA14 /* Package.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 617C7D172C1856C200FFEA14 /* Package.xctestplan */; };
+		617C7D202C1856C200FFEA14 /* Package.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 617C7D172C1856C200FFEA14 /* Package.xctestplan */; };
+		6185F4D12C18608900B9733D /* OpenWeatherMap_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6185F4D02C18608900B9733D /* OpenWeatherMap_Tests.swift */; };
+		6185F4D22C18608900B9733D /* OpenWeatherMap_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6185F4D02C18608900B9733D /* OpenWeatherMap_Tests.swift */; };
 		619435982C0E015C0034554B /* Any_ in Frameworks */ = {isa = PBXBuildFile; productRef = 619435972C0E015C0034554B /* Any_ */; };
 		6194359B2C0E01600034554B /* Any_ in Frameworks */ = {isa = PBXBuildFile; productRef = 6194359A2C0E01600034554B /* Any_ */; };
-		61DC60252C0F48A4003D5B36 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61DC60242C0F48A4003D5B36 /* StoreKit.framework */; };
 		61F648C72BEA122900C2625C /* Wand_Weather in Frameworks */ = {isa = PBXBuildFile; productRef = 61F648C62BEA122900C2625C /* Wand_Weather */; };
 /* End PBXBuildFile section */
 
@@ -44,10 +45,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		610118A42C16DFDA0081811C /* WeatherKit_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherKit_Tests.swift; sourceTree = "<group>"; };
-		610118A62C16DFDA0081811C /* Unit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
-		610118A72C16DFDA0081811C /* XCTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestCase.swift; sourceTree = "<group>"; };
-		610118A92C16DFDA0081811C /* Package.xctestplan */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Package.xctestplan; sourceTree = "<group>"; };
 		613966152BE0F4EF004C18A3 /* watchPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = watchPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		613966482BE0F87A004C18A3 /* watchPlayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = watchPlayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		615158E82BF761DC001646EA /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
@@ -58,6 +55,11 @@
 		6162624728BC8E2B00D63EA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6162624C28BC8E2B00D63EA5 /* Play.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Play.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6172A0EF2C10A30E00AF925F /* INSPIRATION.TXT */ = {isa = PBXFileReference; lastKnownFileType = text; path = INSPIRATION.TXT; sourceTree = "<group>"; };
+		617C7D122C1856C200FFEA14 /* WeatherKit_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherKit_Tests.swift; sourceTree = "<group>"; };
+		617C7D142C1856C200FFEA14 /* Unit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
+		617C7D152C1856C200FFEA14 /* XCTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestCase.swift; sourceTree = "<group>"; };
+		617C7D172C1856C200FFEA14 /* Package.xctestplan */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Package.xctestplan; sourceTree = "<group>"; };
+		6185F4D02C18608900B9733D /* OpenWeatherMap_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenWeatherMap_Tests.swift; sourceTree = "<group>"; };
 		618D53D12BE3C5120098DB6F /* wandTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wandTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		618F8F182BEA00D400618E7C /* testPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = testPlan.xctestplan; sourceTree = "<group>"; };
 		618F8F272BEA04BF00618E7C /* watchTestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = watchTestPlan.xctestplan; sourceTree = "<group>"; };
@@ -65,7 +67,6 @@
 		61B1B41C2BC9696200BD1F36 /* Entitlements.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Entitlements.entitlements; sourceTree = "<group>"; };
 		61B464E72BEB76B70064B4C1 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		61CAAD372C16D5020061DAA5 /* Package.resolved */ = {isa = PBXFileReference; lastKnownFileType = text; name = Package.resolved; path = Wand_Weather.xcodeproj/xcshareddata/swiftpm/Package.resolved; sourceTree = "<group>"; };
-		61DC60242C0F48A4003D5B36 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
 		OBJ_141 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		OBJ_142 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,7 +93,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				615159132BF76A8C001646EA /* Wand_Weather in Frameworks */,
-				61DC60252C0F48A4003D5B36 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,33 +107,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		610118A52C16DFDA0081811C /* Cases */ = {
-			isa = PBXGroup;
-			children = (
-				610118A42C16DFDA0081811C /* WeatherKit_Tests.swift */,
-			);
-			path = Cases;
-			sourceTree = "<group>";
-		};
-		610118A82C16DFDA0081811C /* Unit */ = {
-			isa = PBXGroup;
-			children = (
-				610118A62C16DFDA0081811C /* Unit.swift */,
-				610118A72C16DFDA0081811C /* XCTestCase.swift */,
-			);
-			path = Unit;
-			sourceTree = "<group>";
-		};
-		610118AA2C16DFDA0081811C /* wandTests */ = {
-			isa = PBXGroup;
-			children = (
-				610118A52C16DFDA0081811C /* Cases */,
-				610118A82C16DFDA0081811C /* Unit */,
-				610118A92C16DFDA0081811C /* Package.xctestplan */,
-			);
-			path = wandTests;
-			sourceTree = "<group>";
-		};
 		6162624428BC8E2A00D63EA5 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,10 +121,38 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		617C7D132C1856C200FFEA14 /* Cases */ = {
+			isa = PBXGroup;
+			children = (
+				6185F4D02C18608900B9733D /* OpenWeatherMap_Tests.swift */,
+				617C7D122C1856C200FFEA14 /* WeatherKit_Tests.swift */,
+			);
+			path = Cases;
+			sourceTree = "<group>";
+		};
+		617C7D162C1856C200FFEA14 /* Unit */ = {
+			isa = PBXGroup;
+			children = (
+				617C7D142C1856C200FFEA14 /* Unit.swift */,
+				617C7D152C1856C200FFEA14 /* XCTestCase.swift */,
+			);
+			path = Unit;
+			sourceTree = "<group>";
+		};
+		617C7D182C1856C200FFEA14 /* wandTests */ = {
+			isa = PBXGroup;
+			children = (
+				617C7D132C1856C200FFEA14 /* Cases */,
+				617C7D162C1856C200FFEA14 /* Unit */,
+				617C7D172C1856C200FFEA14 /* Package.xctestplan */,
+			);
+			path = wandTests;
+			sourceTree = "<group>";
+		};
 		618F8ED22BE9FDCE00618E7C /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				610118AA2C16DFDA0081811C /* wandTests */,
+				617C7D182C1856C200FFEA14 /* wandTests */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -159,7 +160,6 @@
 		619435992C0E01600034554B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				61DC60242C0F48A4003D5B36 /* StoreKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -344,7 +344,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				610118B22C16DFDA0081811C /* Package.xctestplan in Resources */,
+				617C7D202C1856C200FFEA14 /* Package.xctestplan in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,7 +360,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				610118B12C16DFDA0081811C /* Package.xctestplan in Resources */,
+				617C7D1F2C1856C200FFEA14 /* Package.xctestplan in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,9 +379,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				610118AC2C16DFDA0081811C /* WeatherKit_Tests.swift in Sources */,
-				610118B02C16DFDA0081811C /* XCTestCase.swift in Sources */,
-				610118AE2C16DFDA0081811C /* Unit.swift in Sources */,
+				617C7D1A2C1856C200FFEA14 /* WeatherKit_Tests.swift in Sources */,
+				617C7D1E2C1856C200FFEA14 /* XCTestCase.swift in Sources */,
+				617C7D1C2C1856C200FFEA14 /* Unit.swift in Sources */,
+				6185F4D22C18608900B9733D /* OpenWeatherMap_Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,9 +398,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				610118AB2C16DFDA0081811C /* WeatherKit_Tests.swift in Sources */,
-				610118AF2C16DFDA0081811C /* XCTestCase.swift in Sources */,
-				610118AD2C16DFDA0081811C /* Unit.swift in Sources */,
+				617C7D192C1856C200FFEA14 /* WeatherKit_Tests.swift in Sources */,
+				617C7D1D2C1856C200FFEA14 /* XCTestCase.swift in Sources */,
+				617C7D1B2C1856C200FFEA14 /* Unit.swift in Sources */,
+				6185F4D12C18608900B9733D /* OpenWeatherMap_Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,9 +438,9 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_ENTITLEMENTS = App/Entitlements.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 234;
+				CURRENT_PROJECT_VERSION = 308;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = LZSP4Z4B6A;
 				ENABLE_HARDENED_RUNTIME = NO;
@@ -498,10 +500,10 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_ENTITLEMENTS = App/Entitlements.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 234;
+				CURRENT_PROJECT_VERSION = 308;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = LZSP4Z4B6A;
 				ENABLE_HARDENED_RUNTIME = NO;
@@ -556,7 +558,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 234;
+				CURRENT_PROJECT_VERSION = 308;
 				DEVELOPMENT_TEAM = LZSP4Z4B6A;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
@@ -604,7 +606,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 234;
+				CURRENT_PROJECT_VERSION = 308;
 				DEVELOPMENT_TEAM = LZSP4Z4B6A;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -666,7 +668,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_ENTITLEMENTS = App/Entitlements.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 234;
+				CURRENT_PROJECT_VERSION = 308;
 				DEVELOPMENT_TEAM = LZSP4Z4B6A;
 				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_PREVIEWS = YES;
@@ -766,7 +768,7 @@
 				CODE_SIGN_ENTITLEMENTS = App/Entitlements.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 234;
+				CURRENT_PROJECT_VERSION = 308;
 				DEVELOPMENT_TEAM = LZSP4Z4B6A;
 				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -841,7 +843,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 234;
+				CURRENT_PROJECT_VERSION = 308;
 				DEVELOPMENT_TEAM = LZSP4Z4B6A;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
@@ -895,7 +897,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 234;
+				CURRENT_PROJECT_VERSION = 308;
 				DEVELOPMENT_TEAM = LZSP4Z4B6A;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;

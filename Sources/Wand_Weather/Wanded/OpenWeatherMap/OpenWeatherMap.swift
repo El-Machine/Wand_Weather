@@ -6,7 +6,7 @@
 /// you may not use this file except in compliance with the License.
 /// You may obtain a copy of the License at
 ///
-/// 1) .LICENSE
+/// 1) LICENSE file
 /// 2) https://apache.org/licenses/LICENSE-2.0
 ///
 /// Unless required by applicable law or agreed to in writing, software
@@ -18,40 +18,12 @@
 /// Created by Alex Kozin
 /// 2020 El Machine
 
-import SwiftUI
+public
+struct OpenWeatherMap {
 
-import CoreLocation
-import Wand_CoreLocation
-import Wand_Weather
-import WandURL
-import Wand
+    //https://home.openweathermap.org/api_keys
+    internal
+    static
+    let appId = "983f328f973b9904144768159db115b5"
 
-@available(iOS 14, macOS 12, tvOS 14, watchOS 7, *)
-@main
-struct PlayApp: App {
-
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
-    }
-
-}
-
-@available(iOS 14, macOS 12, tvOS 14, watchOS 7, *)
-struct ContentView: View {
-    var body: some View {
-
-        VStack {
-            Image(systemName: "wand.and.stars")
-            Text("Hello, world!")
-        }
-        .padding()
-
-    }
-}
-
-@available(iOS 14, macOS 12, tvOS 14, watchOS 7, *)
-#Preview {
-    ContentView()
 }

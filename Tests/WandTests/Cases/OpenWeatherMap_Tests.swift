@@ -31,44 +31,49 @@ import XCTest
 
 @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
 final
-class WeatherKit_Tests: XCTestCase {
+class OpenWeatherMap_Tests: XCTestCase {
 
-//JWT Error code 2
-//    func test_Nil_to_Weather_every() {
-//        let e = expectation()
-//        e.assertForOverFulfill = false
-//
-//        |.every { (weather: Weather) in
-//            e.fulfill()
-//        }
-//
-//        waitForExpectations()
-//    }
-//
-//    func test_Nil_to_Weather_once() {
+//    func test_Weather_once() {
 //        let e = expectation()
 //
-//        |.one { (weather: Weather) in
-//            e.fulfill()
-//        }
-//
-//        waitForExpectations()
-//    }
-//
-//    func test_CLLocation_to_Weather_once() {
-//        let e = expectation()
-//
-//        let location = CLLocation.any
-//        location | .one { (weather: Weather) in
+//        |.one { (weather: OpenWeatherMap.Weather) in
 //            e.fulfill()
 //        }
 //
 //        waitForExpectations()
 //    }
 
+    func test_CLLocationCoordinate2D_to_Weather_once() {
+        let e = expectation()
 
-    func test_WeatherService() {
-        XCTAssertNotNil(WeatherService.self|)
+        let coordinate: CLLocationCoordinate2D = (lat: 55.0138, lon: 82.9314)|
+        coordinate | .get { (weather: OpenWeatherMap.Weather) in
+            e.fulfill()
+        }
+
+        waitForExpectations()
+    }
+
+    func test_CLLocation_to_Weather_once() {
+        let e = expectation()
+
+        let location: CLLocation = (lat: 55.0138, lon: 82.9314)|
+        location | .get { (weather: OpenWeatherMap.Weather) in
+            e.fulfill()
+        }
+
+        waitForExpectations()
+    }
+
+    func test_Path_to_Weather_once() {
+        let e = expectation()
+
+        let path = "https://api.openweathermap.org/data/2.5/weather?lat=55.0138&lon=82.9314&appid=983f328f973b9904144768159db115b5"
+        path | .get { (weather: OpenWeatherMap.Weather) in
+            e.fulfill()
+        }
+
+        waitForExpectations()
     }
 
 }

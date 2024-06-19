@@ -39,26 +39,19 @@ let package = Package(
 
     dependencies: [
         .package(url: "https://github.com/el-machine/Any.git", from: "1.0.1"),
-//        .package(url: "https://github.com/el-machine/Wand.git", from: "1.3.5"),
+        .package(url: "https://github.com/el-machine/Wand.git", from: "1.3.5"),
 
-//        .package(url: "https://github.com/el-machine/Wand_CoreLocation.git", from: "1.0.1"),
-//        .package(url: "https://github.com/el-machine/Wand_URL.git", from: "1.0.2"),
+        .package(url: "https://github.com/el-machine/Wand_CoreLocation.git", from: "1.0.2"),
+        .package(url: "https://github.com/el-machine/WandURL.git", "1.1.0"..<"1.1.0"),
     ],
 
     targets: [
 
-        .target(name: "Wand_Weather", dependencies:
-                    [
-//                        "Wand_CoreLocation",
-//"Wand_URL",
-//.product(name: "Wand_URL", package: "Wand_URL"),
-//.product(name: "Wand", package: "Wand_URL"),
-                    ]
-               ),
+        .target(name: "Wand_Weather", dependencies: ["Wand", "Wand_CoreLocation", "WandURL"] ),
         .testTarget(name: "wandTests", dependencies:
                         [
-                            .product(name: "Any_", package: "Any"),
                             "Wand_Weather",
+                            .product(name: "Any_", package: "Any")
                         ]
                    )
 
