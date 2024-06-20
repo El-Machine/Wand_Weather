@@ -25,7 +25,30 @@ import Wand_CoreLocation
 import WandURL
 import Wand
 
+public
 extension OpenWeatherMap {
+
+    struct Forecast: Codable {
+
+        let id: Int
+        let main: String
+
+        let description: String
+        let icon: String
+
+    }
+
+    struct Sys: Codable {
+
+        let id: Int
+        let type: Int
+
+        let country: String
+
+        let sunrise: TimeInterval
+        let sunset: TimeInterval
+
+    }
 
     public
     struct Weather: OpenWeatherMap.API.Model {
@@ -38,6 +61,8 @@ extension OpenWeatherMap {
         }
 
         let id: Int
+
+        public
         let cod: Int
 
         let name: String
@@ -55,36 +80,12 @@ extension OpenWeatherMap {
 
 }
 
-struct Forecast: Codable {
-
-    let id: Int
-    let main: String
-
-    let description: String
-    let icon: String
-
-}
-
-struct Sys: Codable {
-
-    let id: Int
-    let type: Int
-
-    let country: String
-
-    let sunrise: TimeInterval
-    let sunset: TimeInterval
-
-}
-
-
-
-///// Ask
-/////
-///// |{ (weather: OpenWeatherMap.Weather) in
-/////
-///// }
-/////
+/// Ask
+///
+/// |{ (weather: OpenWeatherMap.Weather) in
+///
+/// }
+///
 //@discardableResult
 //@inline(__always)
 //prefix
@@ -92,7 +93,7 @@ struct Sys: Codable {
 //func |(handler: @escaping (OpenWeatherMap.Weather)->()) -> Wand {
 //    nil | .one(handler: handler)
 //}
-//
+
 ///// Ask
 /////
 ///// location | .one { (weather: OpenWeatherMap.Weather) in
@@ -103,29 +104,32 @@ struct Sys: Codable {
 //@inline(__always)
 //prefix
 //public
-//func |(ask: Ask<OpenWeatherMap.Weather>) -> Wand {
-//    nil | ask
+//func |(once: Ask<OpenWeatherMap.Weather>) -> Wand {
+//    nil | once
 //}
-//
-//
-///// Ask
-/////
-///// wand | .one { (weather: OpenWeatherMap.Weather) in
-/////
-///// }
-/////
+
+
+/// Ask
+///
+/// wand | .one { (weather: OpenWeatherMap.Weather) in
+///
+/// }
+///
 //@discardableResult
 //@inline(__always)
 //public
-//func | (wand: Wand, ask: Ask<OpenWeatherMap.Weather>.Get) -> Wand {
+//func | (wand: Wand, ask: Ask<OpenWeatherMap.Weather>) -> Wand {
+//
+//
+//    let get = Ask.Get(handler: ask.handler)
 //
 //    //Save ask
-//    _ = wand.answer(the: ask)
+//    _ = wand.answer(the: get)
 //
 //    //Make request
 //    return wand | .every { (location: CLLocation) in
 //
-//        location | ask
+//        location | get
 //
 //    }
 //

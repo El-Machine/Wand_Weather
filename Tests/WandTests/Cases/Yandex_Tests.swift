@@ -25,15 +25,16 @@ import WeatherKit
 import Any_
 import Wand_CoreLocation
 import Wand_Weather
+import WandURL
 import Wand
 
 import XCTest
 
 @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
 final
-class OpenWeatherMap_Tests: XCTestCase {
+class Yandex_Tests: XCTestCase {
 
-//    func test_Weather() {
+//    func test_Weather_once() {
 //        let e = expectation()
 //
 //        |{ (weather: OpenWeatherMap.Weather) in
@@ -47,7 +48,7 @@ class OpenWeatherMap_Tests: XCTestCase {
         let e = expectation()
 
         let coordinate: CLLocationCoordinate2D = (lat: 55.0138, lon: 82.9314)|
-        coordinate | .get { (weather: OpenWeatherMap.Weather) in
+        coordinate | .get { (weather: Yandex.Weather) in
             e.fulfill()
         }
 
@@ -58,7 +59,7 @@ class OpenWeatherMap_Tests: XCTestCase {
         let e = expectation()
 
         let location: CLLocation = (lat: 55.0138, lon: 82.9314)|
-        location | .get { (weather: OpenWeatherMap.Weather) in
+        location | .get { (weather: Yandex.Weather) in
             e.fulfill()
         }
 
@@ -68,12 +69,10 @@ class OpenWeatherMap_Tests: XCTestCase {
     func test_Path_to_Weather_once() {
         let e = expectation()
 
-        let path = "https://api.openweathermap.org/data/2.5/weather?lat=55.0138&lon=82.9314&appid=983f328f973b9904144768159db115b5"
-        path | .get { (weather: OpenWeatherMap.Weather) in
-            
-            if weather.cod == 200 {
-                e.fulfill()
-            }
+        let path = "https://api.weather.yandex.ru/v2/forecast?lat=52.37125&lon=4.89388"
+        path | .get { (weather: Yandex.Weather) in
+
+            e.fulfill()
 
         }
 

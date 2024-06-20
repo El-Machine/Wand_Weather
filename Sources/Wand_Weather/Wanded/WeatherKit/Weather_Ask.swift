@@ -48,7 +48,7 @@ extension Weather: Asking, Wanded {
         //Request for a first time
 
         //Prepare context
-        wand | .once(ask.once) { [weak wand] (location: CLLocation) in
+        wand | .option { [weak wand] (location: CLLocation) in
 
             Task { [weak wand] in  do {
 
