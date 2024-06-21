@@ -10,22 +10,20 @@
 		613966272BE0F532004C18A3 /* Play.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6162624528BC8E2A00D63EA5 /* Play.swift */; };
 		613966662BE0FB0D004C18A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6162624728BC8E2B00D63EA5 /* Assets.xcassets */; };
 		615159132BF76A8C001646EA /* Wand_Weather in Frameworks */ = {isa = PBXBuildFile; productRef = 61F648C62BEA122900C2625C /* Wand_Weather */; };
-		615AE02E2C23EF8200D05E79 /* Yandex_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615AE02D2C23EF8200D05E79 /* Yandex_Tests.swift */; };
-		615AE02F2C23EF8200D05E79 /* Yandex_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615AE02D2C23EF8200D05E79 /* Yandex_Tests.swift */; };
 		6162625428BC8E2B00D63EA5 /* Play.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6162624528BC8E2A00D63EA5 /* Play.swift */; };
 		6162625828BC8E2B00D63EA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6162624728BC8E2B00D63EA5 /* Assets.xcassets */; };
-		617C7D192C1856C200FFEA14 /* WeatherKit_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617C7D122C1856C200FFEA14 /* WeatherKit_Tests.swift */; };
-		617C7D1A2C1856C200FFEA14 /* WeatherKit_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617C7D122C1856C200FFEA14 /* WeatherKit_Tests.swift */; };
 		617C7D1B2C1856C200FFEA14 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617C7D142C1856C200FFEA14 /* Unit.swift */; };
 		617C7D1C2C1856C200FFEA14 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617C7D142C1856C200FFEA14 /* Unit.swift */; };
 		617C7D1D2C1856C200FFEA14 /* XCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617C7D152C1856C200FFEA14 /* XCTestCase.swift */; };
 		617C7D1E2C1856C200FFEA14 /* XCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617C7D152C1856C200FFEA14 /* XCTestCase.swift */; };
 		617C7D1F2C1856C200FFEA14 /* Package.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 617C7D172C1856C200FFEA14 /* Package.xctestplan */; };
 		617C7D202C1856C200FFEA14 /* Package.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 617C7D172C1856C200FFEA14 /* Package.xctestplan */; };
-		6185F4D12C18608900B9733D /* OpenWeatherMap_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6185F4D02C18608900B9733D /* OpenWeatherMap_Tests.swift */; };
-		6185F4D22C18608900B9733D /* OpenWeatherMap_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6185F4D02C18608900B9733D /* OpenWeatherMap_Tests.swift */; };
 		619435982C0E015C0034554B /* Any_ in Frameworks */ = {isa = PBXBuildFile; productRef = 619435972C0E015C0034554B /* Any_ */; };
 		6194359B2C0E01600034554B /* Any_ in Frameworks */ = {isa = PBXBuildFile; productRef = 6194359A2C0E01600034554B /* Any_ */; };
+		61DAEF3E2C256B2400D7000A /* Yandex_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615AE02D2C23EF8200D05E79 /* Yandex_Tests.swift */; };
+		61DAEF3F2C256B2400D7000A /* OpenWeatherMap_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6185F4D02C18608900B9733D /* OpenWeatherMap_Tests.swift */; };
+		61DAEF402C256B2400D7000A /* Yandex_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615AE02D2C23EF8200D05E79 /* Yandex_Tests.swift */; };
+		61DAEF412C256B2400D7000A /* OpenWeatherMap_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6185F4D02C18608900B9733D /* OpenWeatherMap_Tests.swift */; };
 		61F648C72BEA122900C2625C /* Wand_Weather in Frameworks */ = {isa = PBXBuildFile; productRef = 61F648C62BEA122900C2625C /* Wand_Weather */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +60,7 @@
 		617C7D142C1856C200FFEA14 /* Unit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
 		617C7D152C1856C200FFEA14 /* XCTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestCase.swift; sourceTree = "<group>"; };
 		617C7D172C1856C200FFEA14 /* Package.xctestplan */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Package.xctestplan; sourceTree = "<group>"; };
+		618363BA2C2444F1007E2CD9 /* Chain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chain.swift; sourceTree = "<group>"; };
 		6185F4D02C18608900B9733D /* OpenWeatherMap_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenWeatherMap_Tests.swift; sourceTree = "<group>"; };
 		618D53D12BE3C5120098DB6F /* wandTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wandTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		618F8F182BEA00D400618E7C /* testPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = testPlan.xctestplan; sourceTree = "<group>"; };
@@ -130,6 +129,7 @@
 				6185F4D02C18608900B9733D /* OpenWeatherMap_Tests.swift */,
 				617C7D122C1856C200FFEA14 /* WeatherKit_Tests.swift */,
 				615AE02D2C23EF8200D05E79 /* Yandex_Tests.swift */,
+				618363BA2C2444F1007E2CD9 /* Chain.swift */,
 			);
 			path = Cases;
 			sourceTree = "<group>";
@@ -383,11 +383,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				615AE02F2C23EF8200D05E79 /* Yandex_Tests.swift in Sources */,
-				617C7D1A2C1856C200FFEA14 /* WeatherKit_Tests.swift in Sources */,
 				617C7D1E2C1856C200FFEA14 /* XCTestCase.swift in Sources */,
+				61DAEF3E2C256B2400D7000A /* Yandex_Tests.swift in Sources */,
+				61DAEF3F2C256B2400D7000A /* OpenWeatherMap_Tests.swift in Sources */,
 				617C7D1C2C1856C200FFEA14 /* Unit.swift in Sources */,
-				6185F4D22C18608900B9733D /* OpenWeatherMap_Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,11 +402,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				615AE02E2C23EF8200D05E79 /* Yandex_Tests.swift in Sources */,
-				617C7D192C1856C200FFEA14 /* WeatherKit_Tests.swift in Sources */,
 				617C7D1D2C1856C200FFEA14 /* XCTestCase.swift in Sources */,
+				61DAEF402C256B2400D7000A /* Yandex_Tests.swift in Sources */,
+				61DAEF412C256B2400D7000A /* OpenWeatherMap_Tests.swift in Sources */,
 				617C7D1B2C1856C200FFEA14 /* Unit.swift in Sources */,
-				6185F4D12C18608900B9733D /* OpenWeatherMap_Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,7 +444,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = App/Entitlements.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 366;
+				CURRENT_PROJECT_VERSION = 418;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = LZSP4Z4B6A;
 				ENABLE_HARDENED_RUNTIME = NO;
@@ -509,7 +507,7 @@
 				CODE_SIGN_ENTITLEMENTS = App/Entitlements.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 366;
+				CURRENT_PROJECT_VERSION = 418;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = LZSP4Z4B6A;
 				ENABLE_HARDENED_RUNTIME = NO;
@@ -564,7 +562,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 366;
+				CURRENT_PROJECT_VERSION = 418;
 				DEVELOPMENT_TEAM = LZSP4Z4B6A;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
@@ -612,7 +610,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 366;
+				CURRENT_PROJECT_VERSION = 418;
 				DEVELOPMENT_TEAM = LZSP4Z4B6A;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -674,7 +672,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_ENTITLEMENTS = App/Entitlements.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 366;
+				CURRENT_PROJECT_VERSION = 418;
 				DEVELOPMENT_TEAM = LZSP4Z4B6A;
 				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_PREVIEWS = YES;
@@ -774,7 +772,7 @@
 				CODE_SIGN_ENTITLEMENTS = App/Entitlements.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 366;
+				CURRENT_PROJECT_VERSION = 418;
 				DEVELOPMENT_TEAM = LZSP4Z4B6A;
 				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -849,7 +847,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 366;
+				CURRENT_PROJECT_VERSION = 418;
 				DEVELOPMENT_TEAM = LZSP4Z4B6A;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
@@ -903,7 +901,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 366;
+				CURRENT_PROJECT_VERSION = 418;
 				DEVELOPMENT_TEAM = LZSP4Z4B6A;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;

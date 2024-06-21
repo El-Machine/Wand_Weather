@@ -33,21 +33,21 @@ import XCTest
 final
 class OpenWeatherMap_Tests: XCTestCase {
 
-//    func test_Weather() {
-//        let e = expectation()
-//
-//        |{ (weather: OpenWeatherMap.Weather) in
-//            e.fulfill()
-//        }
-//
-//        waitForExpectations()
-//    }
+    func test_Weather() {
+        let e = expectation()
+
+        |{ (weather: OpenWeatherMap_Weather) in
+            e.fulfill()
+        }
+
+        waitForExpectations()
+    }
 
     func test_CLLocationCoordinate2D_to_Weather_once() {
         let e = expectation()
 
         let coordinate: CLLocationCoordinate2D = (lat: 55.0138, lon: 82.9314)|
-        coordinate | .get { (weather: OpenWeatherMap.Weather) in
+        coordinate | .get { (weather: OpenWeatherMap_Weather) in
             e.fulfill()
         }
 
@@ -58,7 +58,7 @@ class OpenWeatherMap_Tests: XCTestCase {
         let e = expectation()
 
         let location: CLLocation = (lat: 55.0138, lon: 82.9314)|
-        location | .get { (weather: OpenWeatherMap.Weather) in
+        location | .get { (weather: OpenWeatherMap_Weather) in
             e.fulfill()
         }
 
@@ -69,7 +69,7 @@ class OpenWeatherMap_Tests: XCTestCase {
         let e = expectation()
 
         let path = "https://api.openweathermap.org/data/2.5/weather?lat=55.0138&lon=82.9314&appid=983f328f973b9904144768159db115b5"
-        path | .get { (weather: OpenWeatherMap.Weather) in
+        path | .get { (weather: OpenWeatherMap_Weather) in
             
             if weather.cod == 200 {
                 e.fulfill()

@@ -22,6 +22,7 @@
   },
   "testTargets" : [
     {
+      "enabled" : false,
       "target" : {
         "containerPath" : "container:Wand_Weather.xcodeproj",
         "identifier" : "613966472BE0F87A004C18A3",

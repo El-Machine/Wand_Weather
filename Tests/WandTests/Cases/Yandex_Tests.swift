@@ -34,21 +34,21 @@ import XCTest
 final
 class Yandex_Tests: XCTestCase {
 
-//    func test_Weather_once() {
-//        let e = expectation()
-//
-//        |{ (weather: OpenWeatherMap.Weather) in
-//            e.fulfill()
-//        }
-//
-//        waitForExpectations()
-//    }
+    func test_Weather_once() {
+        let e = expectation()
+
+        |{ (weather: Yandex_Weather) in
+            e.fulfill()
+        }
+
+        waitForExpectations()
+    }
 
     func test_CLLocationCoordinate2D_to_Weather_once() {
         let e = expectation()
 
         let coordinate: CLLocationCoordinate2D = (lat: 55.0138, lon: 82.9314)|
-        coordinate | .get { (weather: Yandex.Weather) in
+        coordinate | .get { (weather: Yandex_Weather) in
             e.fulfill()
         }
 
@@ -59,7 +59,7 @@ class Yandex_Tests: XCTestCase {
         let e = expectation()
 
         let location: CLLocation = (lat: 55.0138, lon: 82.9314)|
-        location | .get { (weather: Yandex.Weather) in
+        location | .get { (weather: Yandex_Weather) in
             e.fulfill()
         }
 
@@ -70,7 +70,7 @@ class Yandex_Tests: XCTestCase {
         let e = expectation()
 
         let path = "https://api.weather.yandex.ru/v2/forecast?lat=52.37125&lon=4.89388"
-        path | .get { (weather: Yandex.Weather) in
+        path | .get { (weather: Yandex_Weather) in
 
             e.fulfill()
 

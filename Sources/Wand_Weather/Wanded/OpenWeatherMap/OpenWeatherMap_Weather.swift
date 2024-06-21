@@ -26,7 +26,7 @@ import WandURL
 import Wand
 
 public
-extension OpenWeatherMap {
+struct OpenWeatherMap_Weather: OpenWeatherMap.API.Model {
 
     struct Forecast: Codable {
 
@@ -50,31 +50,73 @@ extension OpenWeatherMap {
 
     }
 
+    @inlinable
     public
-    struct Weather: OpenWeatherMap.API.Model {
+    static
+    var path: String {
+        base! + "weather"
+    }
 
-        @inlinable
-        public
-        static
-        var path: String {
-            base! + "weather"
-        }
+    let id: Int
 
-        let id: Int
+    public
+    let cod: Int
 
-        public
-        let cod: Int
+    let name: String
+    let timezone: Int
+    let base: String
 
-        let name: String
-        let timezone: Int
-        let base: String
+    let weather: [Forecast]
 
-        let weather: [Forecast]
+    let main: [String: Float]
+    let sys: Sys
 
-        let main: [String: Float]
-        let sys: Sys
+    let wind: [String: Float]
 
-        let wind: [String: Int]
+}
+
+/// Ask
+///
+/// |{ weather in
+///
+/// }
+///
+@discardableResult
+@inline(__always)
+prefix
+public
+func | (handler: @escaping (OpenWeatherMap_Weather)->() ) -> Wand {
+    |.one(handler: handler)
+}
+
+/// Ask
+/// - `every`
+/// - `one`
+/// - `while`
+///
+/// |.one { weather in
+///
+/// }
+///
+@discardableResult
+@inline(__always)
+prefix
+public
+func | (ask: Ask<OpenWeatherMap_Weather>) -> Wand {
+
+    let wand = Wand()
+
+    let get = Ask<OpenWeatherMap_Weather>.Get {
+        ask.handler($0)
+    }
+
+    //Save ask
+    _ = wand.answer(the: get)
+
+    //Make request
+    return wand | ask.option { (location: CLLocation) in
+
+        location | get
 
     }
 
@@ -82,62 +124,7 @@ extension OpenWeatherMap {
 
 /// Ask
 ///
-/// |{ (weather: OpenWeatherMap.Weather) in
-///
-/// }
-///
-//@discardableResult
-//@inline(__always)
-//prefix
-//public
-//func |(handler: @escaping (OpenWeatherMap.Weather)->()) -> Wand {
-//    nil | .one(handler: handler)
-//}
-
-///// Ask
-/////
-///// location | .one { (weather: OpenWeatherMap.Weather) in
-/////
-///// }
-/////
-//@discardableResult
-//@inline(__always)
-//prefix
-//public
-//func |(once: Ask<OpenWeatherMap.Weather>) -> Wand {
-//    nil | once
-//}
-
-
-/// Ask
-///
-/// wand | .one { (weather: OpenWeatherMap.Weather) in
-///
-/// }
-///
-//@discardableResult
-//@inline(__always)
-//public
-//func | (wand: Wand, ask: Ask<OpenWeatherMap.Weather>) -> Wand {
-//
-//
-//    let get = Ask.Get(handler: ask.handler)
-//
-//    //Save ask
-//    _ = wand.answer(the: get)
-//
-//    //Make request
-//    return wand | .every { (location: CLLocation) in
-//
-//        location | get
-//
-//    }
-//
-//}
-
-/// Ask
-///
-/// coordinate | .get { (weather: OpenWeatherMap.Weather) in
+/// coordinate | .get { (weather: OpenWeatherMap_Weather) in
 ///
 /// }
 ///
@@ -145,9 +132,9 @@ extension OpenWeatherMap {
 @inline(__always)
 public
 func |(coordinate: CLLocationCoordinate2D,
-       get: Ask<OpenWeatherMap.Weather>.Get) -> Wand {
+       get: Ask<OpenWeatherMap_Weather>.Get) -> Wand {
 
-    OpenWeatherMap.Weather.path +   """
+    OpenWeatherMap_Weather.path +   """
                                     ?lat=\(coordinate.latitude)\
                                     &lon=\(coordinate.longitude)\
                                     &appid=\(OpenWeatherMap.appId)
@@ -158,7 +145,7 @@ func |(coordinate: CLLocationCoordinate2D,
 
 /// Ask
 ///
-/// location | .get { (weather: OpenWeatherMap.Weather) in
+/// location | .get { (weather: OpenWeatherMap_Weather) in
 ///
 /// }
 ///
@@ -166,32 +153,33 @@ func |(coordinate: CLLocationCoordinate2D,
 @inline(__always)
 public
 func |(location: CLLocation,
-       get: Ask<OpenWeatherMap.Weather>.Get) -> Wand {
+       get: Ask<OpenWeatherMap_Weather>.Get) -> Wand {
+
+    let wand = location.wand
 
     let coordinate = location.coordinate
-    return OpenWeatherMap.Weather.path +    """
-                                            ?lat=\(coordinate.latitude)\
-                                            &lon=\(coordinate.longitude)\
-                                            &appid=\(OpenWeatherMap.appId)
-                                            """
-    | get
+    let path = OpenWeatherMap_Weather.path +    """
+                                                ?lat=\(coordinate.latitude)\
+                                                &lon=\(coordinate.longitude)\
+                                                &appid=\(OpenWeatherMap.appId)
+                                                """
+    wand.store(path)
+
+    return wand | get
 
 }
 
-/// Ask
-///
-/// location | .get { (weather: OpenWeatherMap.Weather) in
-///
-/// }
-///
+
+/// Chain
 @discardableResult
 @inline(__always)
 public
-func |(path: String,
-       get: Ask<OpenWeatherMap.Weather>.Get) -> Wand {
+func |<T: Asking>(l: Ask<OpenWeatherMap_Weather>, r: Ask<T>) -> Wand {
 
-    Wand.to(path) | get
+    let wand = |l
+    T.wand(wand, asks: r)
 
+    return wand
 }
 
 #endif

@@ -22,53 +22,48 @@
 import CoreLocation.CLLocation
 import WeatherKit
 
+import Any_
 import Wand_CoreLocation
+import Wand_Weather
+import WandURL
 import Wand
 
-/// Ask
-///
-///  |.one { (weather: Weather) in
-///
-/// }
-///
+import XCTest
+
 @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
-@available(visionOS, unavailable)
-extension Weather: Asking, Wanded {
+final
+class Chain_Tests: XCTestCase {
 
-    @inline(__always)
-    public
-    static
-    func wand<T>(_ wand: Wand, asks ask: Ask<T>) {
+    func test_Weather_once() {
+        let e = expectation()
 
-        //Save ask
-        guard wand.answer(the: ask) else {
-            return
+        //Ask n
+        OpenWeatherMap_Weather.get | Yandex_Weather.get | .all { wand in
+
+
+//            let open: OpenWeatherMap_Weather = $0.get()!
+//            let yandex: Yandex.Weather = $0.get()!
+
+            e.fulfill()
+
+        } | .any { last: Any in
+            print("🧪" + last)
         }
 
-        //Request for a first time
-
-        //Prepare context
-        wand | ask.option { [weak wand] (location: CLLocation) in
-
-            Task { [weak wand] in  do {
-
-                guard let wand else {
-                    return
-                }
-
-                let service: WeatherService = wand.obtain()
-
-                //Make request
-                let weather = try await service.weather(for: location)
-                wand.add(weather)
-
-            } catch {
-                wand?.add(error)
-            }}
-
-        }
-
+        waitForExpectations()
     }
+
+}
+
+extension Rest.Model {
+
+    static
+    var get: Ask<Self>.Get {
+        Ask<Self>.Get { _ in
+            return false
+        }
+    }
+
 
 }
 

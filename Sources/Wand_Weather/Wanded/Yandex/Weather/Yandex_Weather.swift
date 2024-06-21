@@ -25,7 +25,8 @@ import Wand_CoreLocation
 import WandURL
 import Wand
 
-extension Yandex {
+public
+struct Yandex_Weather: Yandex.API.Model {
 
     public
     struct Fact: Codable {
@@ -55,21 +56,63 @@ extension Yandex {
         let source: String
         let uv_index: Int
         let wind_gust: Float
-        
+
+    }
+
+    @inlinable
+    public
+    static
+    var path: String {
+        base! + "forecast"
     }
 
     public
-    struct Weather: Yandex.API.Model {
+    let fact: Fact
 
-        @inlinable
-        public
-        static
-        var path: String {
-            base! + "forecast"
-        }
+}
 
-        public
-        let fact: Fact
+/// Ask
+///
+/// |{ weather in
+///
+/// }
+///
+@discardableResult
+@inline(__always)
+prefix
+public
+func | (handler: @escaping (Yandex_Weather)->() ) -> Wand {
+    |.one(handler: handler)
+}
+
+/// Ask
+/// - `every`
+/// - `one`
+/// - `while`
+///
+/// |.one { weather in
+///
+/// }
+///
+@discardableResult
+@inline(__always)
+prefix
+public
+func | (ask: Ask<Yandex_Weather>) -> Wand {
+
+    let wand = Wand()
+
+    let get = Ask<Yandex_Weather>.Get {
+        ask.handler($0)
+    }
+
+    //Save ask
+    _ = wand.answer(the: get)
+
+    //Make request
+    return wand | ask.option { (location: CLLocation) in
+
+        location | get
 
     }
 
@@ -77,7 +120,7 @@ extension Yandex {
 
 /// Ask
 ///
-/// coordinate | .get { (weather: OpenWeatherMap.Weather) in
+/// coordinate | .get { (weather: OpenWeatherMap_Weather) in
 ///
 /// }
 ///
@@ -85,9 +128,9 @@ extension Yandex {
 @inline(__always)
 public
 func |(coordinate: CLLocationCoordinate2D,
-       get: Ask<Yandex.Weather>.Get) -> Wand {
+       get: Ask<Yandex_Weather>.Get) -> Wand {
 
-    Yandex.Weather.path + """
+    Yandex_Weather.path + """
                           ?lat=\(coordinate.latitude)\
                           &lon=\(coordinate.longitude)
                           """
@@ -97,7 +140,7 @@ func |(coordinate: CLLocationCoordinate2D,
 
 /// Ask
 ///
-/// location | .get { (weather: OpenWeatherMap.Weather) in
+/// location | .get { (weather: OpenWeatherMap_Weather) in
 ///
 /// }
 ///
@@ -105,15 +148,29 @@ func |(coordinate: CLLocationCoordinate2D,
 @inline(__always)
 public
 func |(location: CLLocation,
-       get: Ask<Yandex.Weather>.Get) -> Wand {
+       get: Ask<Yandex_Weather>.Get) -> Wand {
 
     let coordinate = location.coordinate
-    return Yandex.Weather.path + """
+    return Yandex_Weather.path + """
                                  ?lat=\(coordinate.latitude)\
                                  &lon=\(coordinate.longitude)
                                  """
     | get
 
+}
+
+
+
+/// Chain
+@discardableResult
+@inline(__always)
+public
+func |<T: Asking>(l: Ask<Yandex_Weather>, r: Ask<T>) -> Wand {
+
+    let wand = |l
+    T.wand(wand, asks: r)
+
+    return wand
 }
 
 #endif
