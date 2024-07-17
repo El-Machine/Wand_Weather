@@ -39,10 +39,10 @@ let package = Package(
 
     dependencies: [
         .package(url: "https://github.com/el-machine/Any.git", from: "1.0.1"),
-        .package(url: "https://github.com/el-machine/Wand.git", from: "1.4.0"),
+        .package(url: "https://github.com/el-machine/Wand.git", from: "1.4.7"),
 
-        .package(url: "https://github.com/el-machine/Wand_CoreLocation.git", from: "1.0.3"),
-        .package(url: "https://github.com/el-machine/WandURL.git", from: "1.4.0"),
+        .package(url: "https://github.com/el-machine/Wand_CoreLocation.git", from: "1.4.4"),
+        .package(url: "https://github.com/el-machine/WandURL.git", from: "1.4.1"),
     ],
 
     targets: [

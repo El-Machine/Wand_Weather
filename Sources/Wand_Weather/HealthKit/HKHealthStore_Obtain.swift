@@ -19,32 +19,24 @@
 /// 2020 El Machine
 
 #if canImport(WeatherKit)
-import CoreLocation.CLLocation
 import WeatherKit
-
-import Any_
-import Wand_CoreLocation
-import Wand_Weather
-import WandURL
 import Wand
 
-import XCTest
-
+/// Obtain
+///
+/// let service: WeatherService = nil|
+///
 @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
-final
-class Chain_Tests: XCTestCase {
+@available(visionOS, unavailable)
+extension HKHealthStore: Obtain {
 
-    func test_Weather_once() {
-        let e = expectation()
-
-        //Ask n
-        OpenWeatherMap_Weather.get | Yandex_Weather.get | .any { (last: Any) in
-            print("🧪 \(last)")
-        }
-
-        waitForExpectations()
+    @inline(__always)
+    public 
+    static
+    func obtain(by wand: Wand?) -> Self {
+        HKHealthStore()
     }
-
+    
 }
 
 #endif

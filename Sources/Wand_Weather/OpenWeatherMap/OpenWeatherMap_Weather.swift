@@ -26,7 +26,7 @@ import WandURL
 import Wand
 
 public
-struct OpenWeatherMap_Weather: OpenWeatherMap.API.Model {
+struct OpenWeatherMap_Weather: OpenWeatherMap.API.Model, AskingNil {
 
     struct Forecast: Codable {
 

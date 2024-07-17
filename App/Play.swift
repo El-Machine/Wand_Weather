@@ -20,10 +20,9 @@
 
 import SwiftUI
 
-import CoreLocation
 import Wand_CoreLocation
-import Wand_Weather
 import WandURL
+import Wand_Weather
 import Wand
 
 @available(iOS 14, macOS 12, tvOS 14, watchOS 7, *)
@@ -43,7 +42,13 @@ struct ContentView: View {
     var body: some View {
 
         VStack {
-            Image(systemName: "wand.and.stars")
+            Image(systemName: "wand.and.stars").onAppear {
+//                OpenWeatherMap_Weather.get | Yandex_Weather.get | .any { (last: Any) in
+//                    print("🧪 \(last)")
+//                } | { (e: Error) in
+//                    print("🔗 \(e)")
+//                }
+            }
             Text("Hello, world!")
         }
         .padding()
