@@ -21,7 +21,7 @@
 #if canImport(CoreLocation)
 import CoreLocation.CLLocation
 
-import Wand_CoreLocation
+import WandLocation
 import WandURL
 import Wand
 

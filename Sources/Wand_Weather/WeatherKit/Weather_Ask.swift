@@ -22,7 +22,7 @@
 import CoreLocation.CLLocation
 import WeatherKit
 
-import Wand_CoreLocation
+import WandLocation
 import Wand
 
 /// Ask

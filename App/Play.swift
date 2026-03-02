@@ -20,7 +20,7 @@
 
 import SwiftUI
 
-import Wand_CoreLocation
+import WandLocation
 import WandURL
 import Wand_Weather
 import Wand

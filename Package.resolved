@@ -3,37 +3,37 @@
     {
       "identity" : "any",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/el-machine/Any.git",
+      "location" : "https://github.com/the-wand/Any.git",
       "state" : {
-        "revision" : "ba94ebd40a70c5d6d058ae25f3b7cacb810dfec4",
-        "version" : "1.0.1"
+        "revision" : "5fccdf9628bc117439a87a564958196c28896c97",
+        "version" : "1.0.3"
+      }
+    },
+    {
+      "identity" : "location",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/the-wand/Location.git",
+      "state" : {
+        "revision" : "669bd32da84d2b58eca7cdb6d6c6169293170f60",
+        "version" : "3.0.5"
+      }
+    },
+    {
+      "identity" : "url",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/the-wand/URL.git",
+      "state" : {
+        "revision" : "5b26934fe78254ed86f90206bc252f245580426f",
+        "version" : "3.0.5"
       }
     },
     {
       "identity" : "wand",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/el-machine/Wand.git",
+      "location" : "https://github.com/the-wand/Wand.git",
       "state" : {
-        "revision" : "835a9ba87588686ffd2e9d1078d4a0930e0b0cae",
-        "version" : "1.4.7"
-      }
-    },
-    {
-      "identity" : "wand_corelocation",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/el-machine/Wand_CoreLocation.git",
-      "state" : {
-        "revision" : "a66b4a182d2248d265e7c104f19ee81cb208f660",
-        "version" : "1.4.4"
-      }
-    },
-    {
-      "identity" : "wandurl",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/el-machine/WandURL.git",
-      "state" : {
-        "revision" : "aa4e9876dfdf08b85f104d1d6ffe31dccbbd16a5",
-        "version" : "1.4.2"
+        "revision" : "a132182b3ebe58d71fdeaab119a4a8e68805a6a4",
+        "version" : "3.0.5"
       }
     }
   ],

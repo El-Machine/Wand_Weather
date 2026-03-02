@@ -24,7 +24,6 @@ import PackageDescription
 
 let package = Package(
     name: "Wand_Weather",
-    defaultLocalization: "ru",
 
     platforms: [
         .iOS(.v14),
@@ -38,22 +37,26 @@ let package = Package(
     ],
 
     dependencies: [
-        .package(url: "https://github.com/el-machine/Any.git", from: "1.0.1"),
-        .package(url: "https://github.com/el-machine/Wand.git", from: "1.4.7"),
+        .package(url: "https://github.com/the-wand/Any.git", from: "1.0.3"),
+        .package(url: "https://github.com/the-wand/Wand.git", from: "3.0.5"),
 
-        .package(url: "https://github.com/el-machine/Wand_CoreLocation.git", from: "1.4.4"),
-        .package(url: "https://github.com/el-machine/WandURL.git", from: "1.4.1"),
+        .package(url: "https://github.com/the-wand/Location.git", from: "3.0.5"),
+        .package(url: "https://github.com/the-wand/URL.git", from: "3.0.5"),
     ],
 
     targets: [
-
-        .target(name: "Wand_Weather", dependencies: ["Wand", "Wand_CoreLocation", "WandURL"] ),
+        .target(name: "Wand_Weather", dependencies:
+                    [
+                        "Wand",
+                        .product(name: "WandLocation", package: "Location"),
+                        .product(name: "WandURL", package: "URL"),
+                    ]
+               ),
         .testTarget(name: "wandTests", dependencies:
                         [
                             "Wand_Weather",
                             .product(name: "Any_", package: "Any")
                         ]
                    )
-
     ]
 )

@@ -23,7 +23,7 @@ import CoreLocation.CLLocation
 import WeatherKit
 
 import Any_
-import Wand_CoreLocation
+import WandLocation
 import Wand_Weather
 import WandURL
 import Wand
