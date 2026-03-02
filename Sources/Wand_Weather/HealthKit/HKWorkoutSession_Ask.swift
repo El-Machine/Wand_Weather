@@ -50,42 +50,23 @@ extension HKWorkoutSession: Asking, Wanded {
         //Prepare context
         let source: HKHealthStore = wand.get()
 
-        do {
-            // Check that Health data is available on the device.
-            if HKHealthStore.isHealthDataAvailable() {
+        Task { [weak wand] in  do {
 
-                // Asynchronously request authorization to the data.
-                try await healthStore.requestAuthorization(toShare: allTypes, read: allTypes)
+            guard let wand else {
+                return
             }
-        } catch (let e) {
 
-            wand.add(e)
-            
-        }
+            if HKHealthStore.isHealthDataAvailable() {
+                let state = try await healthStore.requestAuthorization(toShare: allTypes, read: allTypes)
+            }
 
+            //Make request
+            let weather = try await service.weather(for: location)
+            wand.add(weather)
 
-//        source.
-//        source.requestAuthorization(toShare: Set<HKSampleType>, read: <#T##Set<HKObjectType>#>)
-
-//        wand | ask.option { [weak wand] (location: CLLocation) in
-//
-//            Task { [weak wand] in  do {
-//
-//                guard let wand else {
-//                    return
-//                }
-//
-//                let service: WeatherService = wand.obtain()
-//
-//                //Make request
-//                let weather = try await service.weather(for: location)
-//                wand.add(weather)
-//
-//            } catch {
-//                wand?.add(error)
-//            }}
-//
-//        }
+        } catch {
+            wand?.add(error)
+        }}
 
     }
 
