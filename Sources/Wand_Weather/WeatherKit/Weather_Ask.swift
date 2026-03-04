@@ -33,22 +33,22 @@ import Wand
 ///
 @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
 @available(visionOS, unavailable)
-extension Weather: Asking, Wanded {
+extension Weather: @retroactive Ask.T, @retroactive Wanded {
 
     @inline(__always)
     public
     static
-    func wand<T>(_ wand: Wand, asks ask: Ask<T>) {
+    func ask<C, T>(with scope: C, ask: Ask<T>) -> Core {
 
-        //Save ask
-        guard wand.answer(the: ask) else {
-            return
+        let wand = Core.to(scope)
+        guard wand.append(ask: ask) else {
+            return wand
         }
 
         //Request for a first time
 
         //Prepare context
-        wand | ask.option { [weak wand] (location: CLLocation) in
+        return wand | ask.depend(check: true) { [weak wand] (location: CLLocation) in
 
             Task { [weak wand] in  do {
 
@@ -56,7 +56,7 @@ extension Weather: Asking, Wanded {
                     return
                 }
 
-                let service: WeatherService = wand.obtain()
+                let service: WeatherService = wand.get()
 
                 //Make request
                 let weather = try await service.weather(for: location)

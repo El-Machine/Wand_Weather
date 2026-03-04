@@ -81,7 +81,7 @@ struct Yandex_Weather: Yandex.API.Model {
 @inline(__always)
 prefix
 public
-func | (handler: @escaping (Yandex_Weather)->() ) -> Wand {
+func | (handler: @escaping (Yandex_Weather)->() ) -> Core {
     |.one(handler: handler)
 }
 
@@ -98,22 +98,21 @@ func | (handler: @escaping (Yandex_Weather)->() ) -> Wand {
 @inline(__always)
 prefix
 public
-func | (ask: Ask<Yandex_Weather>) -> Wand {
+func | (ask: Ask<Yandex_Weather>) -> Core {
 
-    let wand = Wand()
+    let wand = Core()
 
     let get = Ask<Yandex_Weather>.Get {
         ask.handler($0)
     }
 
-    //Save ask
-    _ = wand.answer(the: get)
+    guard wand.append(ask: ask) else {
+        return wand
+    }
 
     //Make request
-    return wand | ask.option { (location: CLLocation) in
-
+    return wand | ask.depend(check: true) { (location: CLLocation) in
         location | get
-
     }
 
 }
@@ -128,7 +127,7 @@ func | (ask: Ask<Yandex_Weather>) -> Wand {
 @inline(__always)
 public
 func |(coordinate: CLLocationCoordinate2D,
-       get: Ask<Yandex_Weather>.Get) -> Wand {
+       get: Ask<Yandex_Weather>.Get) -> Core {
 
     Yandex_Weather.path + """
                           ?lat=\(coordinate.latitude)\
@@ -148,7 +147,7 @@ func |(coordinate: CLLocationCoordinate2D,
 @inline(__always)
 public
 func |(location: CLLocation,
-       get: Ask<Yandex_Weather>.Get) -> Wand {
+       get: Ask<Yandex_Weather>.Get) -> Core {
 
     let coordinate = location.coordinate
     return Yandex_Weather.path + """
@@ -165,10 +164,10 @@ func |(location: CLLocation,
 @discardableResult
 @inline(__always)
 public
-func |<T: Asking>(l: Ask<Yandex_Weather>, r: Ask<T>) -> Wand {
+func |<T: Ask.T>(l: Ask<Yandex_Weather>, r: Ask<T>) -> Core {
 
     let wand = |l
-    T.wand(wand, asks: r)
+    T.ask(with: wand, ask: r)
 
     return wand
 }

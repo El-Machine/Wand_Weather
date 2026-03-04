@@ -11,30 +11,30 @@
       }
     },
     {
+      "identity" : "location",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/the-wand/Location.git",
+      "state" : {
+        "revision" : "669bd32da84d2b58eca7cdb6d6c6169293170f60",
+        "version" : "3.0.5"
+      }
+    },
+    {
+      "identity" : "url",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/the-wand/URL.git",
+      "state" : {
+        "revision" : "5b26934fe78254ed86f90206bc252f245580426f",
+        "version" : "3.0.5"
+      }
+    },
+    {
       "identity" : "wand",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/el-machine/Wand.git",
+      "location" : "https://github.com/the-wand/Wand.git",
       "state" : {
-        "revision" : "409d91c31ae04765dcf314cf74a2058946827bfd",
-        "version" : "1.5.5"
-      }
-    },
-    {
-      "identity" : "wand_corelocation",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/el-machine/Wand_CoreLocation.git",
-      "state" : {
-        "revision" : "a66b4a182d2248d265e7c104f19ee81cb208f660",
-        "version" : "1.4.4"
-      }
-    },
-    {
-      "identity" : "wandurl",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/el-machine/WandURL.git",
-      "state" : {
-        "revision" : "5b012c40c2a72382dc9149b4a04460993c4163b6",
-        "version" : "1.4.5"
+        "revision" : "a132182b3ebe58d71fdeaab119a4a8e68805a6a4",
+        "version" : "3.0.5"
       }
     }
   ],

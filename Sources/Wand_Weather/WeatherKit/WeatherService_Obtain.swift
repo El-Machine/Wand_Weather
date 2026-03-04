@@ -28,12 +28,12 @@ import Wand
 ///
 @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
 @available(visionOS, unavailable)
-extension WeatherService: Obtain {
+extension WeatherService: @retroactive Obtainable {
 
     @inline(__always)
-    public 
+    public
     static
-    func obtain(by wand: Wand?) -> Self {
+    func obtain<C>(with scope: C?, by wand: Core?) -> Self {
         Self.shared as! Self
     }
     

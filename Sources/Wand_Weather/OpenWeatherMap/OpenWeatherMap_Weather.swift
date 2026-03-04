@@ -26,7 +26,7 @@ import WandURL
 import Wand
 
 public
-struct OpenWeatherMap_Weather: OpenWeatherMap.API.Model, AskingNil {
+struct OpenWeatherMap_Weather: OpenWeatherMap.API.Model, Ask.Nil {
 
     struct Forecast: Codable {
 
@@ -85,7 +85,7 @@ struct OpenWeatherMap_Weather: OpenWeatherMap.API.Model, AskingNil {
 @inline(__always)
 prefix
 public
-func | (handler: @escaping (OpenWeatherMap_Weather)->() ) -> Wand {
+func | (handler: @escaping (OpenWeatherMap_Weather)->() ) -> Core {
     |.one(handler: handler)
 }
 
@@ -102,19 +102,21 @@ func | (handler: @escaping (OpenWeatherMap_Weather)->() ) -> Wand {
 @inline(__always)
 prefix
 public
-func | (ask: Ask<OpenWeatherMap_Weather>) -> Wand {
+func | (ask: Ask<OpenWeatherMap_Weather>) -> Core {
 
-    let wand = Wand()
+    let wand = Core()
 
     let get = Ask<OpenWeatherMap_Weather>.Get {
         ask.handler($0)
     }
 
     //Save ask
-    _ = wand.answer(the: get)
+    guard wand.append(ask: ask) else {
+        return wand
+    }
 
     //Make request
-    return wand | ask.option { (location: CLLocation) in
+    return wand | ask.depend { (location: CLLocation) in
 
         location | get
 
@@ -132,7 +134,7 @@ func | (ask: Ask<OpenWeatherMap_Weather>) -> Wand {
 @inline(__always)
 public
 func |(coordinate: CLLocationCoordinate2D,
-       get: Ask<OpenWeatherMap_Weather>.Get) -> Wand {
+       get: Ask<OpenWeatherMap_Weather>.Get) -> Core {
 
     OpenWeatherMap_Weather.path +   """
                                     ?lat=\(coordinate.latitude)\
@@ -153,7 +155,7 @@ func |(coordinate: CLLocationCoordinate2D,
 @inline(__always)
 public
 func |(location: CLLocation,
-       get: Ask<OpenWeatherMap_Weather>.Get) -> Wand {
+       get: Ask<OpenWeatherMap_Weather>.Get) -> Core {
 
     let wand = location.wand
 
@@ -163,7 +165,7 @@ func |(location: CLLocation,
                                                 &lon=\(coordinate.longitude)\
                                                 &appid=\(OpenWeatherMap.appId)
                                                 """
-    wand.store(path)
+    wand.put(path)
 
     return wand | get
 
@@ -174,10 +176,10 @@ func |(location: CLLocation,
 @discardableResult
 @inline(__always)
 public
-func |<T: Asking>(l: Ask<OpenWeatherMap_Weather>, r: Ask<T>) -> Wand {
+func |<T: Ask.T>(l: Ask<OpenWeatherMap_Weather>, r: Ask<T>) -> Core {
 
     let wand = |l
-    T.wand(wand, asks: r)
+    T.ask(with: wand, ask: r)
 
     return wand
 }
